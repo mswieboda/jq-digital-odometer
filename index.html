@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>digitalOdometer</title>
+    <link href="css/digitalOdometer.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <div id="digitalOdometer"></div>
+    <div>
+        <button id="countTo">count to</button><input type="text" id="num"><button id="reset">reset</button>
+    </div>
+    
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/digitalOdometer.js"></script>
+    <script>
+    $(function() {
+        $("#digitalOdometer").digitalOdometer();
+        
+        $("#countTo").click(function() {
+            $("#digitalOdometer").digitalOdometer('countToDigit', {'toDigit': parseInt($("#num").val()), 'speed': 10 });
+        });
+        
+        $("#reset").click(function() {
+            $("#digitalOdometer").digitalOdometer('reset');
+        });
+    });
+    </script>
+</body>
+</html>
